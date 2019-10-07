@@ -1,0 +1,52 @@
+body {
+    background-color: #262626;
+}
+
+.btn, .btn-primary, .btn-lg {
+    background-color: pink !important;
+    outline-color: mediumpurple !important;
+    border-color: pink !important;
+    margin-bottom: 50px;
+}
+
+
+fieldset {
+    border: 2px solid #262626;
+    padding: 10px;
+}
+
+img {
+    margin-left: 15px;
+}
+
+.jumbotron {
+    background-color: pink;
+    color: whitesmoke !important;
+}
+
+legend {
+    font-weight: bold;
+    color: #262626;
+    font-variant: small-caps;
+    font-size: 125%;
+}
+
+#main {
+    background-color: whitesmoke;
+    /*margin: 0px 50px 0px 50px;*/
+    padding: 3em;
+}
+
+#pizzaGuy {
+    height: 300px;
+    width: auto;
+}
+
+#pizzaImg {
+    margin: 50px 0px 0px 0px;
+}
+
+
+
+
+
