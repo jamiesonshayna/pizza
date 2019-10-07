@@ -9,6 +9,11 @@ body {
     margin-bottom: 50px;
 }
 
+.err {
+    color: red;
+    visibility: hidden;
+}
+
 
 fieldset {
     border: 2px solid #262626;
