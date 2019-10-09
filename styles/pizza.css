@@ -1,3 +1,7 @@
+#address-block {
+    display: none;
+}
+
 body {
     background-color: #262626;
 }
