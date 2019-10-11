@@ -43,14 +43,14 @@
             <legend>Contact Info</legend>
             <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="">
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="">
                 <span class="err" id="err-fname">
                     Please enter a first name
                 </span>
             </div>
             <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="">
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="">
                 <span class="err" id="err-lname">
                     Please enter a last name
                 </span>
@@ -79,7 +79,7 @@
 
             <div class="form-group" id="address-block">
                 <label for="address">Address</label>
-                <textarea class="form-control" id="address" rows="3"></textarea>
+                <textarea class="form-control" id="address" name="address" rows="3"></textarea>
                 <span class="err" id="err-address">
                     Please enter your address for delivery
             </span>
@@ -119,7 +119,7 @@
             <legend>Select a Size</legend>
 
             <div class="form-group">
-                <select class="form-control" id="selectSize">
+                <select class="form-control" id="selectSize" name="selectSize">
                     <option value="none">Select a Size</option>
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>

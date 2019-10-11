@@ -1,3 +1,16 @@
+<?php
+    $first = $_POST['firstName'];
+    $last = $_POST['lastName'];
+    $method = $_POST['method'];
+    $address = $_POST['address'];
+    $size = $_POST['selectSize'];
+
+    // try to get the topings
+    $toppings = $_POST['toppings'];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +21,18 @@
 
     <h1>Thank you for your order!</h1>
     <h2>Order Summary</h2>
-
+    <h3>Customer Information</h3>
+    <p>Name: <?php print "$first $last"; ?></p>
+    <p>You selected: <?php print $method; ?></p>
+    <p>Customer Address Info: <?php print $address; ?></p>
+    <h3>Pizza Information</h3>
+    <p>Size: <?php print $size; ?></p>
+    <p>Toppings: <?php print "$toppings[0], $toppings[1]"; ?></p>
     <pre>
 <!--        puts all data into an array called post -- we print below-->
-        <?php
-            print_r($_POST);
-        ?>
+<!--        --><?php
+//            var_dump($_POST);
+//        ?>
     </pre>
 </body>
 </html>
