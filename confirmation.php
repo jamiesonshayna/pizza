@@ -18,7 +18,6 @@
     <title>Poppa's Pizza</title>
 </head>
 <body>
-
     <h1>Thank you for your order!</h1>
     <h2>Order Summary</h2>
     <h3>Customer Information</h3>
@@ -29,10 +28,30 @@
     <p>Size: <?php print $size; ?></p>
     <p>Toppings: <?php print "$toppings[0], $toppings[1]"; ?></p>
     <pre>
-<!--        puts all data into an array called post -- we print below-->
-<!--        --><?php
-//            var_dump($_POST);
-//        ?>
+
+
     </pre>
+
+    <?php
+    // sending an email to myself the data
+    $email = "jamieson.shayna@gmail.com";
+
+    $email_body = "Order Summary --\r\n";
+    $email_body .= "Name: $first $last\r\n";
+    $email_body .= "Delivery Method: $method\r\n";
+
+    $email_subject = "New Order Placed";
+    $to = $email;
+
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email \r\n";
+
+    $success = mail($to, $email_subject, $email_body, $headers);
+
+    $msg = $success ? "Your order has been successfully placed." : "We're sorry. There was a problem with your order.";
+
+    // print final confirmation here
+    echo "<p>$msg</p>";
+    ?>
 </body>
 </html>
