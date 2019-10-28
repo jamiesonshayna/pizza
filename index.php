@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +12,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link rel="stylesheet" href="styles/pizza.css" type="text/css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -17,8 +21,6 @@
 
 
     <title>Poppa's Pizza</title>
-
-
 </head>
 <body>
     <div class="container" id="main">
@@ -28,12 +30,10 @@
         <p class="lead">Pizza is good.</p>
         <hr class="my-4">
         <p>blah blah blah blah</p>
-<!--        <a class="btn btn-primary btn-lg" href="#" id="eatButton" role="button">Eat</a>-->
     </div>
 
         <div id="pizzaImg" class="col">
             <img id="pizzaGuy" src="images/pizza_dude.jpg" alt="Picture of Pizza w/ Sunglasses" class="img float-right">
-
         </div>
 
 <!--        action is where you want to go when the form is clicked && the method is how it's getting there-->
@@ -117,20 +117,27 @@
 
         <fieldset class="form-group">
             <legend>Select a Size</legend>
-
             <div class="form-group">
                 <select class="form-control" id="selectSize" name="selectSize">
-                    <option value="none">Select a Size</option>
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large</option>
+                    <?php
+                        // associative array so that we can fill the select
+                        $sizes = array(
+                                "none" => "Select a Size",
+                                "small" => "Small (8\")",
+                                "medium" => "Medium (12\")",
+                                "large" => "Large (18\")",
+                        );
+
+                        foreach($sizes as $key => $value) {
+                            echo "<option value='$key'>$value</option>";
+                        }
+                    ?>
                 </select>
             </div>
             <span class="err" id="err-size">
                 Please select a size.
             </span>
-
-        </fieldset>
+        </fieldset> <!-- end of fieldset that contains information for pizza size -->
 
         <button id="submit" type="submit" class="btn btn-primary">
             Submit your order

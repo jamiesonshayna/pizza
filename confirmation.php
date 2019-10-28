@@ -25,7 +25,19 @@
     <p>You selected: <?php print $method; ?></p>
     <p>Customer Address Info: <?php print $address; ?></p>
     <h3>Pizza Information</h3>
-    <p>Size: <?php print $size; ?></p>
+    <p>Size: <?php
+        $validSizes = array("small", "medium", "large");
+
+        if(in_array($size, $validSizes)) {
+            echo "$size";
+        } else {
+            echo "<p>Invalid size.</p>";
+        }
+
+
+        print $size;
+        ?>
+    </p>
     <p>Toppings: <?php print "$toppings[0], $toppings[1]"; ?></p>
     <pre>
 
